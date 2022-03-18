@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, session_requiring_view
+from app.views import home, session_requiring_view, LoginRequireHomeView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home),
+    path("home/", LoginRequireHomeView.as_view()),
     path("session/<cart_id>/", session_requiring_view),
 ]
