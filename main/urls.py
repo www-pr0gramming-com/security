@@ -20,9 +20,9 @@ from app.views import home, session_requiring_view, LoginRequireHomeView
 urlpatterns = [
     # path("admin/", admin.site.urls),
     path("12345678admin/", admin.site.urls),
-    path("", home),
+    path("", home, name="home"),
     path("home/", LoginRequireHomeView.as_view()),
-    path("session/<cart_id>/", session_requiring_view),
+    path("session/<cart_id>/", session_requiring_view, name="session-view"),
 ]
 
 
